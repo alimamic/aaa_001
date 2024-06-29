@@ -1,0 +1,21 @@
+# 定义变量
+integer_var = 10
+float_var = 20.5
+string_var = "Hello, World!"
+
+# 打印变量
+print("Integer:", integer_var)
+print("Float:", float_var)
+print("String:", string_var)
+
+# 基本运算
+addition = integer_var + float_var
+subtraction = integer_var - float_var
+multiplication = integer_var * float_var
+division = integer_var / float_var
+
+# 打印运算结果
+print("Addition:", addition)
+print("Subtraction:", subtraction)
+print("Multiplication:", multiplication)
+print("Division:", division)
