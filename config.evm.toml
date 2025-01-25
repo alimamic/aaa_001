@@ -1,0 +1,45 @@
+[Log]
+Level = "info"
+Outputs = ["stdout"]
+
+[DB]
+Database = "mysql"
+User = "test_user"
+Password = "test_password"
+Name = "bot_db"
+Host = "localhost"
+Port = 3306
+MaxConns = 20
+ConnMaxLifetime = 55
+
+[BotMan]
+Project = "CapyPump"
+Token = "7099821312:AAETmIj2LtdJv0sLXGHwjEJpCdUSpLIfXFo"
+Twitter = "https://x.com/CapyPump"
+HomePosition = false
+AlertLink = "https://t.me/abdex_test_bot"
+ForceSellWithoutTip = false
+Explorer = "testnet.bscscan.com"
+ForceCreateReferral = true
+
+[API]
+KeyManage = "http://127.0.0.1:8090"
+
+[Common]
+Env = "dev"
+HealthPort = 8010
+Secret = false
+
+[Network]
+Type = 1
+RPC = "https://bsc-testnet-dataseed.bnbchain.org"
+WSRPC = "wss://eth-mainnet.g.alchemy.com/v2/aDYKhlQqkNgZ4RLUmStL02oDvqP4Ruuo"
+NativeTokenSymbol = "BNB"
+NativeTokenDecimals = 18
+QueryRPC = "http://127.0.0.1:8060"
+FeeRecipient = "0xfDcFD6d32eF9c063DE462810D74F6498196b6753"
+FeeRatio = 100
+Router = "0x294A6beBAc0Ba2429A8389C96997051ACF6993Bb"
+WrapNativeToken = "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd"
+NativeTokenOracle = "0x1A26d803C2e796601794f8C5609549643832702C"
+UniswapPairInitCodeHash = "e18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303"

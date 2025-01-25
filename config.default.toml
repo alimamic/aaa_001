@@ -1,0 +1,46 @@
+[Log]
+Level = "info"
+Outputs = ["stdout"]
+
+[DB]
+Database = "mysql"
+User = "test_user"
+Password = "test_password"
+Name = "bot_db"
+Host = "localhost"
+Port = 3306
+MaxConns = 20
+ConnMaxLifetime = 55
+
+[BotMan]
+Project = "BullBoom"
+Token = "7936022462:AAErzqvvB83UDdCKcL2WaxH_P-gRYnpyxCU"
+Twitter = "https://x.com/BullBoom"
+HomePosition = false
+AlertLink = "https://t.me/TokenAlertsT"
+BuyLink = "https://www.bullboom.com"
+ForceSellWithoutTip = true
+Explorer = "solscan.io"
+ForceCreateReferral = true
+
+[API]
+KeyManage = "http://127.0.0.1:8070"
+Secret = "OGFiZWY5ZWZhNWJlYzQ4Y2UwYmMzY2MxMmRiMzUyNTJjMWZjYTg3NTVhNmY5YTJiNGMxMjNhNzEyYmJkYzJmYw=="
+TempFeeRecipientSalt = "TempFeeRecipientSalt"
+
+[Common]
+Env = "dev"
+HealthPort = 8080
+Secret = false
+
+[Network]
+Type = 0
+RPC = "https://crimson-hidden-arrow.solana-mainnet.quiknode.pro/9ea78d5e5e923ab104a950fc56b19431bc746a6a"
+WSRPC = "wss://crimson-hidden-arrow.solana-mainnet.quiknode.pro/9ea78d5e5e923ab104a950fc56b19431bc746a6a"
+NativeTokenSymbol = "SOL"
+NativeTokenDecimals = 9
+QueryRPC = "http://127.0.0.1:8080"
+FeeRecipient = "DALzCYWdTGxNnR8geGYeGG5YUEEHNeq56mFKHQAKjdha"
+FeeRatio = 100
+EnableProfiling = true
+WatchBlockHash = false

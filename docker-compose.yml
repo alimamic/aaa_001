@@ -1,0 +1,49 @@
+version: '3.5'
+services:
+  bot-db:
+    image: mysql:latest
+    container_name: bot-db
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=bot_db
+      - MYSQL_USER=test_user
+      - MYSQL_PASSWORD=test_password
+      - MYSQL_ROOT_PASSWORD=test_password
+
+  key-manager:
+    image: key-manager:1.0
+    container_name: key-manager
+    restart: always
+    ports:
+      - 8070:8080
+    environment:
+      - KM_DB_HOST=bot-db
+
+  trade-bot:
+    image: trade-bot:1.0
+    container_name: trade-bot
+    restart: always
+    ports:
+      - 8090:8080
+    environment:
+      - BOT_DB_HOST=bot-db
+      - BOT_API_KEYMANAGE=http://key-manager:8080
+      - BOT_NETWORK_QUERYRPC=http://notify-bot:8080
+      - BOT_BOTMAN_PROJECT=BullBoom
+      - BOT_BOTMAN_TOKEN=7936022462:AAErzqvvB83UDdCKcL2WaxH_P-gRYnpyxCU
+      - BOT_BOTMAN_TWITTER=https://x.com/BullBoom
+      - BOT_BOTMAN_ALERTLINK=https://t.me/TokenAlertsT
+      - BOT_BOTMAN_BUYLINK=https://www.bullboom.com
+      - BOT_BOTMAN_EXPLORER=solscan.io
+      - BOT_NETWORK_RPC=https://crimson-hidden-arrow.solana-mainnet.quiknode.pro/9ea78d5e5e923ab104a950fc56b19431bc746a6a
+      - BOT_NETWORK_WSRPC=wss://crimson-hidden-arrow.solana-mainnet.quiknode.pro/9ea78d5e5e923ab104a950fc56b19431bc746a6a
+      - BOT_NETWORK_FEERECIPIENT=DALzCYWdTGxNnR8geGYeGG5YUEEHNeq56mFKHQAKjdha
+
+  notify-bot:
+    image: notify-bot:1.0
+    container_name: notify-bot
+    restart: always
+    ports:
+      - 8080:8080
